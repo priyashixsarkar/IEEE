@@ -48,7 +48,7 @@ const PathlabRegistration = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/pathlab/register", {
+      const response = await fetch("https://ieee-l1j7.onrender.com/api/pathlab/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...form, licenseProof: "dummy-proof" }),

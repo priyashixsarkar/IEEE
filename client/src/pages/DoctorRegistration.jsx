@@ -49,7 +49,7 @@ const DoctorRegistration = () => {
     try {
       const { confirmPassword, specialization, ...doctorData } = form;
 
-      const res = await fetch("http://localhost:5000/api/doctor/register", {
+      const res = await fetch("https://ieee-l1j7.onrender.com/api/doctor/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(doctorData),
@@ -58,7 +58,7 @@ const DoctorRegistration = () => {
       const data = await res.json();
 
       if (res.ok) {
-        const specRes = await fetch(`http://localhost:5000/api/doctor/specialization/email/${doctorData.email}`, {
+        const specRes = await fetch(`https://ieee-l1j7.onrender.com/api/doctor/specialization/email/${doctorData.email}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ specialization: form.specialization }),

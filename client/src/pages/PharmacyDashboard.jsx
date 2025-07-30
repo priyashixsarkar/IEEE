@@ -7,7 +7,7 @@ export default function PharmacyInventory() {
   useEffect(() => {
     const pharmacyEmail = localStorage.getItem("pharmacyEmail");
     if (!pharmacyEmail) return;
-    fetch(`http://localhost:5000/api/pharmacy/me?email=${encodeURIComponent(pharmacyEmail)}`)
+    fetch(`https://ieee-l1j7.onrender.com/api/pharmacy/me?email=${encodeURIComponent(pharmacyEmail)}`)
       .then((r) => r.json())
       .then((data) => setInventory(data.inventory || []));
   }, []);
@@ -32,7 +32,7 @@ export default function PharmacyInventory() {
     setMsg("");
     const pharmacyEmail = localStorage.getItem("pharmacyEmail");
     try {
-      const response = await fetch("http://localhost:5000/api/pharmacy/inventory", {
+      const response = await fetch("https://ieee-l1j7.onrender.com/api/pharmacy/inventory", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

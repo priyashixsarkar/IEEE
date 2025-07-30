@@ -48,7 +48,7 @@ const PharmacyRegistration = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/pharmacy/register", {
+      const response = await fetch("https://ieee-l1j7.onrender.com/api/pharmacy/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

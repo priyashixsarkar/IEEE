@@ -11,13 +11,13 @@ const DoctorDashboard = () => {
     if (!doctorEmail) return;
 
     // Fetch doctor data (specialization + _id)
-    fetch(`http://localhost:5000/api/doctor/${doctorEmail}`)
+    fetch(`https://ieee-l1j7.onrender.com/api/doctor/${doctorEmail}`)
       .then((res) => res.json())
       .then((data) => {
         setSpecialization(data.specialization || "");
 
         // Fetch appointments using doctorId
-        fetch(`http://localhost:5000/api/appointments/bookings/${data._id}`)
+        fetch(`https://ieee-l1j7.onrender.com/api/appointments/bookings/${data._id}`)
           .then((res) => res.json())
           .then(setAppointments)
           .catch(() => setAppointments([]));
@@ -28,7 +28,7 @@ const DoctorDashboard = () => {
       });
 
     // Fetch patients
-    fetch(`http://localhost:5000/api/doctor/patients/${doctorEmail}`)
+    fetch(`https://ieee-l1j7.onrender.com/api/doctor/patients/${doctorEmail}`)
       .then((res) => res.json())
       .then(setPatients)
       .catch(() => setPatients([]));
@@ -42,7 +42,7 @@ const DoctorDashboard = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/doctor/specialization/email/${doctorEmail}`,
+        `https://ieee-l1j7.onrender.com/api/doctor/specialization/email/${doctorEmail}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

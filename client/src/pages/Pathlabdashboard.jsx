@@ -12,7 +12,7 @@ export default function PathlabDashboard() {
       return;
     }
 
-    fetch(`http://localhost:5000/api/pathlab/me?email=${email}`)
+    fetch(`https://ieee-l1j7.onrender.com/api/pathlab/me?email=${email}`)
       .then((res) => res.json())
       .then((data) => {
         const serverTests = Array.isArray(data.tests) ? data.tests : [];
@@ -51,7 +51,7 @@ export default function PathlabDashboard() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/pathlab/tests", {
+      const response = await fetch("https://ieee-l1j7.onrender.com/api/pathlab/tests", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, tests: nonEmptyTests }),
