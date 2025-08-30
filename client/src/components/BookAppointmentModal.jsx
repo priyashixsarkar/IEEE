@@ -9,7 +9,7 @@ const BookAppointmentModal = ({ doctor, onClose }) => {
 
   useEffect(() => {
     if (doctor && selectedDate) {
-      fetch(`http://localhost:5000/api/appointments/slots/${doctor._id}/${selectedDate}`)
+      fetch(`https://ieee-l1j7.onrender.com/api/appointments/slots/${doctor._id}/${selectedDate}`)
         .then(res => res.json())
         .then(data => {
           setAvailableSlots(data.slots || []);
@@ -30,7 +30,7 @@ const BookAppointmentModal = ({ doctor, onClose }) => {
   }
 
   try {
-    const res = await fetch("http://localhost:5000/api/appointments/book", {
+    const res = await fetch("https://ieee-l1j7.onrender.com/api/appointments/book", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
